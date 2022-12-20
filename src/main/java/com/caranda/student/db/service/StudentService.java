@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.caranda.student.db.model.Student;
 import com.caranda.student.db.repository.StudentRpository;
+
 @Service
 public class StudentService {
 
