@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form class="form-horizontal" action="#" th:action="@{/addStudent/submit}"
+th:object="${estudiante}" method="post">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Form Name</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Nombre</label>  
+  <div class="col-md-4">
+  <input id="nombre" name="nombre" type="text" placeholder="Introduce tu nombre" class="form-control input-md"
+  th:field="*{name}">
+  <span class="help-block">Ej:Juanma</span>  
+  </div>
+  
+</div>
+
+<!-- Text input-->
+<div class="form-group" th:classappend="${#fields.hasErrors('age')} ? 'has-error'">
+  <label class="col-md-4 control-label" for="textinput">Edad</label>  
+  <div class="col-md-4">
+  <input id="edad" name="edad" type="number" placeholder="introduce tu edad" class="form-control input-md"
+  th:field="*{age}">
+  <span class="help-block">Ej:27</span> 
+  </div>
+  <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"
+class="help-block" id="id-error">Errores</span>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Apellido</label>  
+  <div class="col-md-4">
+  <input id="apellido" name="apellido" type="text" placeholder="Introduce tu apellido" class="form-control input-md"
+  th:field="*{surname}">
+  <span class="help-block">Ej.García</span>  
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+  </div>
+</div>
+</fieldset>
+</form>
+</body>
+</html>

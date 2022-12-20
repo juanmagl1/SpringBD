@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <form class="form-horizontal" action="#" th:action="@{/execDel}" 
+	  th:object="${estudiante}" method="POST">
+		<fieldset>
+
+			<!-- Form Name -->
+			<legend>Del Student</legend>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="num1">Name:</label>
+				<div class="col-md-4">
+					<!-- El th value es la propiedad del modelo que le hemos pasado -->
+					<input id="name" th:value="*{name}" name="name" type="text"
+						class="form-control input-md" readonly="readonly">
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="num1">Apellido:</label>
+				<div class="col-md-4">
+					<input id="apellido" th:value="*{surname}" name="apellido" type="text" 
+						class="form-control input-md" readonly="readonly">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="num1">Age:</label>
+				<div class="col-md-4">
+					<input id="age" th:field="*{age}" name="age" type="number"
+						class="form-control input-md" readonly="readonly">
+				</div>
+			</div>
+
+		</fieldset>
+		
+		<input type="submit">
+	</form>
+</body>
+</html>
